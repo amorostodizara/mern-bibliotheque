@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 270 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 270 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 10% 15%;
+
+    --primary: 295 60% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 295 30% 95%;
+    --secondary-foreground: 295 60% 30%;
+
+    --muted: 270 10% 96%;
+    --muted-foreground: 270 5% 45%;
+
+    --accent: 295 45% 90%;
+    --accent-foreground: 295 60% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 10% 90%;
+    --input: 270 10% 90%;
+    --ring: 295 60% 43%;
+
+    --radius: 0.75rem;
+
+    --surface-warm: 30 30% 98%;
+    --primary-glow: 295 70% 55%;
+    --primary-deep: 295 65% 30%;
+
+    --sidebar-background: 295 60% 43%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 295 60% 43%;
+    --sidebar-accent: 295 50% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 295 50% 50%;
+    --sidebar-ring: 0 0% 100%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(295 60% 43%), hsl(295 70% 55%));
+  }
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(295 60% 43%), hsl(320 60% 50%));
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(295 60% 43%), hsl(295 70% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glass-card {
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsla(270, 10%, 90%, 0.5);
+  }
+}
